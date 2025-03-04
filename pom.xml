@@ -45,25 +45,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-           <build>
-          <plugins>
-           <!-- JaCoCo Maven Plugin -->
-           <plugin>
-              <groupId>org.jacoco</groupId>
-              <artifactId>jacoco-maven-plugin</artifactId>
-              <version>0.8.8</version>  <!-- You can change the version if needed -->
-              <executions>
-                    <execution>
-                    <goals>
-                        <goal>prepare-agent</goal> <!-- Prepare JaCoCo agent for code coverage -->
-                        <goal>report</goal> <!-- Generate the coverage report -->
-			    <phase>test</phase>
-                    </goals>
-                   </execution>
-               </executions>
-             </plugin>
-            </plugins>
-            </build>
+        
 
 		</plugins>
 	</build>
