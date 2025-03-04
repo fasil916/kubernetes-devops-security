@@ -13,6 +13,13 @@ pipeline {
               sh "mvn test"
   
             }
-        }  
+        } 
+      stage('Docker build and push') {
+            steps {
+              '''sh printenv
+              sh docker buld -t muhammadfasil/numeric-app:$GIT_COMMIT .'''
+  
+            }
+        } 
     }
 }
