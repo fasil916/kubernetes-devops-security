@@ -1,30 +1,32 @@
 pipeline {
-  agent any
+    agent any
 
-  stages {
-      stage('Build Artifact') {
+    stages {
+        stage('Build Artifact') {
             steps {
-              sh "mvn clean package -DskipTests=true"
-              archiveArtifacts 'target/*.jar' //so that they can be downloaded later
+                sh "mvn clean package -DskipTests=true"
+                archiveArtifacts 'target/*.jar' // Archive artifacts for later download
             }
         }
-       stage('Unit Test') {
+
+        stage('Unit Test') {
             steps {
-              sh "mvn test"
-  
+                sh "mvn test"
             }
-        } 
-      stage('Docker build and push') {
+        }
+
+        stage('Docker build and push') {
             steps {
-              script {
-                
-              docker.withRegistry('https://hub.docker.com', 'docker-hub-cred')
-              sh '''printenv
-              docker build -t muhammadfasil/numeric-app:$GIT_COMMIT .
-              docker push muhammadfasil/numeric-app:$GIT_COMMIT
-              '''
-              }
+                script {
+                    // Use docker.withRegistry to authenticate with Docker Hub
+                    docker.withRegistry('https://hub.docker.com', 'docker-hub-cred') {
+                        // Build Docker image
+                        sh "docker build -t muhammadfasil/numeric-app:${env.GIT_COMMIT} ."
+                        // Push Docker image
+                        sh "docker push muhammadfasil/numeric-app:${env.GIT_COMMIT}"
+                    }
+                }
             }
-        } 
+        }
     }
 }
