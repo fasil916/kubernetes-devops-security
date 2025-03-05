@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {
                     // Use docker.withRegistry to authenticate with Docker Hub
-                    docker.withRegistry('https://hub.docker.com', 'docker-hub-cred') {
+                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-cred') {
                         // Build Docker image
                         sh "docker build -t muhammadfasil/numeric-app:${env.GIT_COMMIT} ."
                         // Push Docker image
