@@ -16,12 +16,14 @@ pipeline {
         } 
       stage('Docker build and push') {
             steps {
-              docker.withRegistry(registryCredentialsId: docker-hub-cred )
+              script {
+                
+              docker.withRegistry(credentialsId: docker-hub-cred )
               sh '''printenv
               docker build -t muhammadfasil/numeric-app:$GIT_COMMIT .
               docker push muhammadfasil/numeric-app:$GIT_COMMIT
               '''
-  
+              }
             }
         } 
     }
