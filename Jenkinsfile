@@ -21,9 +21,9 @@ pipeline {
                     // Use docker.withRegistry to authenticate with Docker Hub
                     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-cred') {
                         // Build Docker image
-                        sh "docker build -t muhammadfasil/numeric-app:${env.GIT_COMMIT} ."
+                        sh "docker build -t muhammadfasil/numeric-app-new:${env.GIT_COMMIT} ."
                         // Push Docker image
-                        sh "docker push muhammadfasil/numeric-app:${env.GIT_COMMIT}"
+                        sh "docker push muhammadfasil/numeric-app-new:${env.GIT_COMMIT}"
                     }
                 }
             }
