@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {
                     // Use Jenkins' credentials system to handle Docker login securely
-                    withDockerRegistry([credentialsId: 'docker-hub-cred', url: 'https://index.docker.io/v1/']) {
+                    withDockerRegistry([credentialsId: 'docker-hub-cred']) {
                         sh "docker build -t muhammadfasil/numeric-app-new:${env.GIT_COMMIT} ."
                         // Push Docker image
                         sh "docker push muhammadfasil/numeric-app-new:${env.GIT_COMMIT}"
