@@ -18,7 +18,7 @@ pipeline {
             steps {
               script {
                 
-              docker.withRegistry(credentialsId: docker-hub-cred)
+              docker.withRegistry('https://hub.docker.com', 'docker-hub-cred')
               sh '''printenv
               docker build -t muhammadfasil/numeric-app:$GIT_COMMIT .
               docker push muhammadfasil/numeric-app:$GIT_COMMIT
