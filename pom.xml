@@ -46,11 +46,16 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<!-- PITest Mutation Testing Plugin -->
-                    <plugin>
-               <groupId>org.pitest</groupId>
-              <artifactId>pitest-maven</artifactId>
-               <version>1.9.0</version>
-               </plugin>
+                   <plugin>
+         <groupId>org.pitest</groupId>
+       <artifactId>pitest-maven</artifactId>
+       <version>1.15.0</version>
+        <configuration>
+        <targetClasses>
+            <param>com.devsecops.*</param> <!-- Update this based on your package -->
+        </targetClasses>
+        </configuration>
+     </plugin>
                    
 		</plugins>
 
