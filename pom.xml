@@ -39,11 +39,7 @@
 	             		
 		</dependency>
 
-		<dependency>
-        <groupId>org.pitest</groupId>
-        <artifactId>pitest-junit5-plugin</artifactId>
-        <version>1.0.0</version>
-       </dependency>
+	
 
 	</dependencies>
 
@@ -53,17 +49,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!-- PITest Mutation Testing Plugin -->
-                   <plugin>
-         <groupId>org.pitest</groupId>
-       <artifactId>pitest-maven</artifactId>
-       <version>1.15.0</version>
-        <configuration>
-        <targetClasses>
-            <param>com.devsecops.*</param> <!-- Update this based on your package -->
-        </targetClasses>
-        </configuration>
-     </plugin>
+			
                    
 		</plugins>
 
