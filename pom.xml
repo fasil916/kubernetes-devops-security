@@ -45,7 +45,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!--                 PIT mutation
+			<!-- PITest Mutation Testing Plugin -->
                     <plugin>
                <groupId>org.pitest</groupId>
               <artifactId>pitest-maven</artifactId>
