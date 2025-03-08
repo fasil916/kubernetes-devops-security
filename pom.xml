@@ -56,7 +56,7 @@
                 <configuration>
              <format>ALL</format>
                <failBuildOnCVSS>8</failBuildOnCVSS>
-</plugin>
+              </plugin>
                    
 		</plugins>
 
