@@ -14,6 +14,7 @@ echo "Exit code: $exit_code"
 
 if [[ "$exit_code" -eq 1 ]]; then
     echo "Image scanning found vulnerabilities!"
+    exit 1
 else
     echo "Image scan passed."
 fi
