@@ -1,0 +1,15 @@
+# Ignore Trivy scan results
+trivy/
+
+# Ignore common unnecessary files
+.git
+.gitignore
+.DS_Store
+node_modules
+venv
+__pycache__
+*.log
+*.tmp
+*.swp
+*.bak
+.env
